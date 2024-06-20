@@ -547,7 +547,7 @@ class BatchSpawnerRegexStates(BatchSpawnerBase):
     ).tag(config=True)
 
     def state_ispending(self):
-        assert self.state_pending_re, "Misconfigured: define state_running_re"
+        assert self.state_pending_re, "Misconfigured: define state_pending_re"
         return self.job_status and re.search(self.state_pending_re, self.job_status)
 
     def state_isrunning(self):
